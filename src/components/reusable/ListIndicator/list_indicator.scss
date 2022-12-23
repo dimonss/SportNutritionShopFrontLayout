@@ -1,0 +1,27 @@
+@import "../../../stylesheets/colors";
+@import "../../../stylesheets/mixins";
+
+.indicator {
+  display: flex;
+  align-items: center;
+  height: 96px;
+
+  &__inner {
+    display: flex;
+  }
+
+  &__item {
+    @include size(16px);
+    @include hover();
+    border-radius: 50%;
+    background: $gray;
+
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
+
+    &__active {
+      background: $normal;
+    }
+  }
+}

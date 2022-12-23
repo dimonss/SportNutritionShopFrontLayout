@@ -1,0 +1,67 @@
+@import "../../../stylesheets/colors";
+@import "../../../stylesheets/mixins";
+
+.review-card {
+  max-width: 380px;
+  transition: scale 1s;
+
+  &:hover {
+    transition: scale 125ms;
+    scale: 1.05;
+    cursor: pointer;
+  }
+
+  &__inner {
+
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: $bg5;
+    height: 90px;
+  }
+
+  &__photo {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(black, $bg4);
+    top: -45px;
+    left: 20px;
+    @include size(115px);
+    overflow: hidden;
+
+    img {
+      @include size(100%)
+    }
+  }
+
+  &__info {
+    color: $bg0;
+    padding-left: 155px;
+
+    &__name {
+      font-family: Roboto-Mediun, serif;
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    &__position {
+      font-size: 14px;
+      line-height: 120%;
+    }
+  }
+
+  &__bottom {
+    min-height: 232px;
+    background: $bg1;
+    font-size: 14px;
+    line-height: 150%;
+    padding: 20px;
+
+    &__description {
+      color: $bg5;
+    }
+  }
+}

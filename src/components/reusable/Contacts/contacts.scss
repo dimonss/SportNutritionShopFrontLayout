@@ -1,0 +1,29 @@
+@import "../../../stylesheets/colors";
+@import "../../../stylesheets/mixins";
+
+.contacts {
+  &__contact {
+    @include centered;
+    &__phone {
+      font-family: Roboto-Mediun, serif;
+      color: $bg1;
+    }
+
+    &__telegram {
+      background: $blue;
+      margin: 0 20px 0 20px;
+    }
+
+    &__whatsapp {
+      background: $green;
+    }
+  }
+}
+
+.social {
+  &__cycle {
+    @include centered;
+    @include size(28px);
+    border-radius: 50%;
+  }
+}

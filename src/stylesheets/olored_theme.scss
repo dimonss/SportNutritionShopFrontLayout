@@ -1,0 +1,46 @@
+@import "_colors.scss";
+
+$themes: (
+        light: (
+                bg0: $bg0,
+                bg1: $bg1,
+                bg2: $bg2,
+                bg3: $bg3,
+                bg4: $bg4,
+                bg5: $bg5,
+                text: black,
+        ),
+        dark: (
+                bg0: $bg5,
+                bg1: $bg4,
+                bg2: $bg3,
+                bg3: $bg2,
+                bg4: $bg1,
+                bg5: $bg0,
+                text: white,
+        ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+                        $theme-map,
+                        (
+                                $key: $value,
+                        )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function color($key) {
+  //noinspection SassScssUnresolvedVariable
+  @return map-get($theme-map, $key);
+}

@@ -1,0 +1,2 @@
+export const SET_STATE_VERSION = "SET_STATE_VERSION";
+

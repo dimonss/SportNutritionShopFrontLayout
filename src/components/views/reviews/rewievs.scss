@@ -1,0 +1,43 @@
+@import "../../../stylesheets/colors";
+@import "../../../stylesheets/mixins";
+
+.reviews {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 670px;
+    background-image: url("../../../images/reviews/bg.png");
+    width: 100%;
+    max-width: 1920px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1180px;
+    flex-direction: column;
+  }
+
+  &__cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-family: Roboto-Mediun, serif;
+    color: $bg5;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin: 40px 0 117px 0;
+  }
+}

@@ -1,0 +1,53 @@
+@import "../../../stylesheets/colors";
+@import "../../../stylesheets/mixins";
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 511px;
+    background-image: url("../../../images/banner/bg.png");
+    width: 100%;
+    max-width: 1920px;
+  }
+
+  &__inner {
+    display: flex;
+    width: 100%;
+    max-width: 1180px;
+    justify-content: space-between;
+  }
+
+  &__indicator-container {
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__text {
+    font-family: Roboto-Mediun, serif;
+    color: $bg5;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      font-size: 44px;
+      margin-bottom: 20px;
+    }
+
+    &__subtitle {
+      max-width: 440px;
+      line-height: 150%;
+    }
+  }
+}

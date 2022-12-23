@@ -1,0 +1,47 @@
+@import "../../../stylesheets/colors";
+@import "../../../stylesheets/mixins";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background: $bg5;
+  height: 80px;
+
+  &__inner {
+    width: 100%;
+    max-width: 1180px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-grow: 3;
+  }
+
+  &__store-basket {
+    @include centered;
+    @include hover;
+    @include size(50px);
+    border-radius: 50%;
+    position: relative;
+    padding-left: 96px;
+
+    &__indicator {
+      @include centered;
+      @include size(20px);
+      border-radius: 50%;
+      position: absolute;
+      background: $normal;
+      top: 0;
+      right: -10px;
+      font-family: Roboto-Mediun, serif;
+      color: white;
+      font-size: 12px;
+    }
+  }
+}

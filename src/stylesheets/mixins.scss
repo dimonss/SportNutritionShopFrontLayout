@@ -1,0 +1,17 @@
+@mixin centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin hover() {
+  &:hover{
+    background: $hover;
+    cursor: pointer;
+  }
+}
