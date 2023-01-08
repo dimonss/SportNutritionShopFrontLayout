@@ -1,0 +1,72 @@
+@import "../../../stylesheets/colors";
+@import "../../../stylesheets/mixins";
+
+.product-card {
+  background: $bg1;
+  padding: 20px;
+  width: 280px;
+  height: 375px;
+  position: relative;
+  overflow: hidden;
+  transition: height 1250ms;
+  &:hover {
+    cursor: pointer;
+    transition: height 250ms;
+    height: 446px;
+  }
+  &:not(:last-child){
+    margin-right: 20px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 390px;
+    margin-bottom: 26px;
+  }
+
+  &__title, &__price {
+    width: 100%;
+    font-family: Roboto-Mediun, serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  &__description {
+    color: $bg4;
+    font-size: 14px;
+    line-height: 150%;
+    width: 100%;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin: 0 auto;
+
+    &__old {
+      text-decoration: line-through;
+      color: $bg3;
+    }
+  }
+  &__button{
+    @include centered;
+    width: 140px;
+    height: 32px;
+    bottom: 10px;
+    background: $normal;
+    border-radius: 4px;
+    color: $bg1;
+    @include hover;
+    &__container{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

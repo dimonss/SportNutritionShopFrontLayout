@@ -1,0 +1,29 @@
+@import "../../../stylesheets/colors";
+
+.rating {
+  &__star {
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &.enable {
+      path {
+        fill: $normal;
+      }
+    }
+
+    &.disable {
+      path {
+        fill: $gray;
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+  }
+}

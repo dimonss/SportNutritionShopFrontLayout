@@ -23,6 +23,10 @@ const strings = {
     protein_bars: "Протеиновые батончики",
     proteins_jams: "Протеиновые джемы",
     protein_cookie: "Протеиновое печенье",
+    bestsellers: "Хиты продаж",
+    new: "Новинки",
+    products_for_promotion: "Товары по акции",
+    add_to_cart: "В корзину",
 }
 
 export default strings;

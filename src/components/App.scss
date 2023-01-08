@@ -1,0 +1,10 @@
+@import "src/stylesheets/_colors.scss";
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    background: #E8E8E8;
+    color: $bg5;
+}
