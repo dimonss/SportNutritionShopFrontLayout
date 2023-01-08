@@ -24,19 +24,28 @@
     padding: 0 19px 0 15px;
     height: 100%;
     background: $normal;
-    width: 280px;
+    width: 250px;
     color: $bg1;
     @include hover;
-
 
     & svg {
       path {
         fill: $bg1;
       }
+      &:last-child {
+        transition: transform, 250ms;
+      }
+    }
+
+    &.open {
+      & svg:last-child {
+        transform: rotate(180deg);
+      }
     }
   }
 
   &__buttons-container {
+    position: relative;
     display: flex;
     align-items: center;
     height: 100%;
@@ -57,4 +66,5 @@
     border-radius: 50%;
     @include hover;
   }
+
 }
