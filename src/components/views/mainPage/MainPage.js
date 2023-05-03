@@ -20,6 +20,7 @@ import ListIndicator from "../../reusable/ListIndicator/ListIndicator";
 
 const mockBestsellers = [
   {
+    id: 0,
     title: "PEANUT BUTTER",
     description: "Натуральная арахисовая паста (Классическая)",
     img: peanut_butter_classic,
@@ -27,6 +28,7 @@ const mockBestsellers = [
     price: 1200,
   },
   {
+    id: 1,
     title: "Печенье PRIMEBAR MIX (10 шт*35 гр)",
     description: "Низкокалорийное печень Bombbar",
     img: cookie,
@@ -34,6 +36,7 @@ const mockBestsellers = [
     price: 890,
   },
   {
+    id: 2,
     title: "PEANUT BUTTER",
     description: "Натуральная арахисовая паста (Тропическая)",
     img: peanut_butter,
@@ -42,6 +45,7 @@ const mockBestsellers = [
     oldPrice: 1150,
   },
   {
+    id: 3,
     title: "Печенье PRIMEBAR MIX (10 шт*35 гр)",
     description: "Низкокалорийное печень Bombbar",
     img: cookie_black,
@@ -51,6 +55,7 @@ const mockBestsellers = [
 ];
 const mockNew = [
   {
+    id: 4,
     title: "WAKE UP",
     description: "Энергетик без сахара со вкусом  малины (Raspberry mint)",
     img: wake_up,
@@ -58,6 +63,7 @@ const mockNew = [
     price: 950,
   },
   {
+    id: 5,
     title: "WAKE UP",
     description: "Энергетик без сахара и ароматный сочный арбуз (Шоколадная).",
     img: peanut_butter_chocolate,
@@ -65,6 +71,7 @@ const mockNew = [
     price: 1200,
   },
   {
+    id: 6,
     title: "WAKE UP",
     description: "Натуральная арахисовая паста  (Индийская)",
     img: peanut_butter_indian,
@@ -72,6 +79,7 @@ const mockNew = [
     price: 1230,
   },
   {
+    id: 7,
     title: "WAKE UP",
     description: "Натуральная арахисовая паста (Кремовая)",
     img: peanut_butter_creamy,
@@ -81,6 +89,7 @@ const mockNew = [
 ];
 const mockPromotion = [
   {
+    id: 8,
     title: "WAKE UP",
     description: "Энергетик без сахара со вкусом ягодного микса (Berry Mix)",
     img: wake_up_red,
@@ -89,6 +98,7 @@ const mockPromotion = [
     oldPrice: 1000,
   },
   {
+    id: 9,
     title: "PEANUT BUTTER",
     description:
       "Натуральная арахисовая паста от Fitness Food Factory (Кокосовая)",
@@ -98,6 +108,7 @@ const mockPromotion = [
     oldPrice: 1240,
   },
   {
+    id: 10,
     title: "WAKE UP",
     description:
       "Энергетик без сахара со вкусом  игристого напитка (Champagne)",
@@ -107,6 +118,7 @@ const mockPromotion = [
     oldPrice: 1000,
   },
   {
+    id: 11,
     title: "PEANUT BUTTER",
     description:
       "Натуральная арахисовая паста от Fitness Food Factory (Протеиновая)",
@@ -118,9 +130,9 @@ const mockPromotion = [
 ];
 
 const commonData = [
-  { title: strings.bestsellers, data: mockBestsellers },
-  { title: strings.new, data: mockNew },
-  { title: strings.products_for_promotion, data: mockPromotion },
+  { id: 1, title: strings.bestsellers, data: mockBestsellers },
+  { id: 2, title: strings.new, data: mockNew },
+  { id: 3, title: strings.products_for_promotion, data: mockPromotion },
 ];
 const MainPage = () => {
   const [page, setPage] = useState(1);
@@ -128,11 +140,11 @@ const MainPage = () => {
     <div className="main-page">
       <div className="main-page__inner">
         {commonData.map((item) => (
-          <div className="main-page__card">
+          <div key={item.id} className="main-page__card">
             <div className="main-page__title">{item.title}</div>
             <div className="main-page__card__inner">
               {item.data.map((item) => (
-                <ProductCard data={item} />
+                <ProductCard key={item.id} data={item} />
               ))}
             </div>
             <div className="main-page__indicator__container">

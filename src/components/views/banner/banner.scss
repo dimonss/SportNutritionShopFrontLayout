@@ -13,13 +13,28 @@
     flex-direction: column;
     height: 511px;
     background-image: url("../../../images/banner/bg.png");
-    width: 100%;
+    width: 300%;
     max-width: 1920px;
+    //overflow: hidden;
   }
 
   &__inner {
     display: flex;
+    justify-content: flex-start;
     width: 100%;
+    max-width: 1180px;
+    overflow: hidden;
+
+    &__container {
+      display: flex;
+      justify-content: flex-start;
+      transition: margin-left 600ms cubic-bezier(.45,.19,.43,1.01);
+    }
+  }
+
+  &__item {
+    display: flex;
+    width: 1200px;
     max-width: 1180px;
     justify-content: space-between;
   }

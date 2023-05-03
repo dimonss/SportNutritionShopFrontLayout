@@ -1,0 +1,78 @@
+@import "../../../stylesheets/mixins";
+@import "../../../stylesheets/colors";
+
+.preloader-container {
+  position: relative;
+  width: 100%;
+}
+
+.preloader-container_size {
+  &_medium,
+  &_m {
+    height: 200px;
+  }
+
+  &_small,
+  &_s {
+    height: 100px;
+  }
+
+  &_extra-small,
+  &_xs {
+    height: 48px;
+  }
+}
+
+.preloader-container_xs {
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+.preloader .pre-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.preloader .pre-container_static {
+  position: relative;
+  z-index: 10;
+}
+
+.preloader .logo-circle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  background: $normal;
+  border-radius: 200px;
+  animation: spin 1s infinite;
+}
+
+.circle-preloader {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 4px solid transparent;
+  border-bottom-color: $normal;
+
+  border-radius: 50%;
+
+  animation: spin 0.75s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

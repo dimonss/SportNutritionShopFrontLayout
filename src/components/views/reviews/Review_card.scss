@@ -2,7 +2,8 @@
 @import "../../../stylesheets/mixins";
 
 .review-card {
-  max-width: 380px;
+  width: 380px;
+  scale: 1;
   transition: scale 1s;
 
   &:hover {

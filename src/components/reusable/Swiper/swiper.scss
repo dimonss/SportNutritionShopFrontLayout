@@ -1,0 +1,29 @@
+body, html {
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  height: 100px;
+  text-align: center;
+  padding-bottom: 50px;
+  background-color: lightpink;
+}
+.sidebar {
+  background-color: lightgreen;
+  flex: none;
+  width: 150px;
+}
+.content {
+  flex: 1 1 0;
+  max-width: 100%;
+}
+
+.swiper-container {
+  height: 100%;
+}
+.swiper-slide {
+  background-color: lightblue;
+}
