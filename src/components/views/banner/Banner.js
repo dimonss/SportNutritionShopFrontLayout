@@ -31,7 +31,7 @@ const Banner = () => {
         <div className="banner__inner">
           <div
             className="banner__inner__container"
-            style={{ "margin-left": CONTENT_POSITION[page] + "%" }}
+            style={{ "marginLeft": CONTENT_POSITION[page] + "%" }}
           >
             <div className="banner__item">
               <div className="banner__text__container">

@@ -28,7 +28,7 @@
     &__container {
       display: flex;
       justify-content: flex-start;
-      transition: margin-left 600ms cubic-bezier(.45,.19,.43,1.01);
+      transition: margin-left 600ms cubic-bezier(0.45, 0.19, 0.43, 1.01);
     }
   }
 
