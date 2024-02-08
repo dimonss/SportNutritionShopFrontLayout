@@ -2,6 +2,7 @@
   "name": "sport_nutrition_react_front",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/sport_nutrition",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -42,11 +43,11 @@
   },
   "devDependencies": {
     "eslint": "^8.26.0",
-    "prettier": "^2.7.1",
-    "eslint-plugin-react": "^7.31.11",
-    "redux-devtools-extension": "^2.13.9",
-    "sass": "^1.55.0",
     "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-prettier": "^4.2.1"
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "prettier": "^2.7.1",
+    "redux-devtools-extension": "^2.13.9",
+    "sass": "^1.55.0"
   }
 }
