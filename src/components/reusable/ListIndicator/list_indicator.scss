@@ -6,6 +6,14 @@
   align-items: center;
   height: 96px;
 
+  @include tablet {
+    height: 80px;
+  }
+
+  @include mobile {
+    height: 60px;
+  }
+
   &__inner {
     display: flex;
   }
@@ -16,8 +24,24 @@
     border-radius: 50%;
     background: $gray;
 
+    @include tablet {
+      @include size(14px);
+    }
+
+    @include mobile {
+      @include size(12px);
+    }
+
     &:not(:last-child) {
       margin-right: 24px;
+
+      @include tablet {
+        margin-right: 20px;
+      }
+
+      @include mobile {
+        margin-right: 16px;
+      }
     }
 
     &__active {

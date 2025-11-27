@@ -9,12 +9,26 @@
   text-transform: uppercase;
   font-family: Roboto-Mediun, serif;
 
+  @include tablet {
+    height: 45px;
+  }
+
+  @include mobile {
+    height: 40px;
+  }
+
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 1180px;
+    padding: 0 10px;
+    box-sizing: border-box;
+
+    @include mobile {
+      padding: 0 5px;
+    }
   }
 
   &__dropdown {
@@ -32,14 +46,35 @@
       path {
         fill: $bg1;
       }
+
       &:last-child {
-        transition: transform, 250ms;
+        transition: transform 250ms;
       }
     }
 
     &.open {
       & svg:last-child {
         transform: rotate(180deg);
+      }
+    }
+
+    @include tablet {
+      width: auto;
+      padding: 0 10px;
+      min-width: 40px;
+
+      div {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      padding: 0 8px;
+      min-width: 35px;
+
+      svg {
+        width: 18px;
+        height: 18px;
       }
     }
   }
@@ -49,6 +84,11 @@
     display: flex;
     align-items: center;
     height: 100%;
+
+    @include tablet {
+      flex: 1;
+      justify-content: flex-start;
+    }
   }
 
   &__button {
@@ -58,12 +98,36 @@
     white-space: nowrap;
     height: 100%;
     @include hover;
+
+    @include tablet {
+      padding: 0 8px;
+      font-size: 12px;
+    }
   }
 
   &__search {
     padding: 10px;
     border-radius: 50%;
     @include hover;
+    flex-shrink: 0;
+
+    @include tablet {
+      padding: 8px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    @include mobile {
+      padding: 6px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
   }
 
 }

@@ -1,21 +1,42 @@
 @import "../../../stylesheets/colors";
+@import "../../../stylesheets/mixins";
 
 .dropdown {
   position: absolute;
   display: flex;
   flex-direction: column;
-  z-index: 1;
+  z-index: 1000;
   padding: 0 12px;
   list-style-type: none;
-  margin-top: 398px;
+  margin-top: 50px;
   background-color: white;
   color: $bg5;
   font-family: Roboto-Regular, serif;
   width: 260px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 400px;
+  overflow-y: auto;
+
+  @include tablet {
+    width: 240px;
+    margin-top: 45px;
+    font-size: 14px;
+  }
+
+  @include mobile {
+    width: 200px;
+    margin-top: 40px;
+    font-size: 12px;
+    padding: 0 10px;
+  }
 
   & > li {
     margin: 0;
     padding: 8px 0;
+
+    @include mobile {
+      padding: 6px 0;
+    }
 
     &:not(:last-child) {
       border-bottom: 1px solid #E3E3E3;
@@ -30,6 +51,12 @@
       border: none;
       padding: 5px;
       margin: 0;
+      font-size: inherit;
+
+      @include mobile {
+        padding: 4px;
+      }
+
       &:hover {
         color: $normal;
         cursor: pointer;

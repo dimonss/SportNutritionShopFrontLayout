@@ -10,8 +10,38 @@
 }
 
 @mixin hover() {
-  &:hover{
+  &:hover {
     background: $hover;
     cursor: pointer;
+  }
+}
+
+@mixin media($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media screen and (min-width: 1200px) {
+    @content;
   }
 }

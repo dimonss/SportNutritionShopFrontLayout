@@ -1,4 +1,6 @@
 @import "src/stylesheets/_colors.scss";
+@import "src/stylesheets/mixins.scss";
+
 a {
     text-decoration: none;
     color: black;
@@ -7,4 +9,10 @@ a {
 body{
     background: #E8E8E8;
     color: $bg5;
+}
+
+.App {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
 }

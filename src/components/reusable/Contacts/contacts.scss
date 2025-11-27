@@ -4,14 +4,37 @@
 .contacts {
   &__contact {
     @include centered;
+    gap: 10px;
+
+    @include mobile {
+      gap: 8px;
+    }
+
     &__phone {
       font-family: Roboto-Mediun, serif;
       color: $bg1;
+      font-size: 16px;
+
+      @include tablet {
+        font-size: 14px;
+      }
+
+      @include mobile {
+        display: none;
+      }
     }
 
     &__telegram {
       background: $blue;
       margin: 0 20px 0 20px;
+
+      @include tablet {
+        margin: 0 10px;
+      }
+
+      @include mobile {
+        margin: 0 5px;
+      }
     }
 
     &__whatsapp {
@@ -25,5 +48,23 @@
     @include centered;
     @include size(28px);
     border-radius: 50%;
+
+    @include tablet {
+      @include size(26px);
+    }
+
+    @include mobile {
+      @include size(24px);
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+
+      @include mobile {
+        width: 14px;
+        height: 14px;
+      }
+    }
   }
 }
