@@ -46,8 +46,9 @@
       path {
         fill: $bg1;
       }
+
       &:last-child {
-        transition: transform, 250ms;
+        transition: transform 250ms;
       }
     }
 
