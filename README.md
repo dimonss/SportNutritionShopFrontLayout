@@ -1,70 +1,153 @@
-# Getting Started with Create React App
+# Sport Nutrition Shop Front (pet project)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## EN
 
-## Available Scripts
+Single-page mockup of a sports nutrition e-commerce storefront. The goal is to practice modern React + Redux layout techniques, build a marketing-heavy landing page, and prepare the codebase for the next steps toward a real shop front.
 
-In the project directory, you can run:
+### What’s inside
 
-### `npm start`
+- React 18 functional components for the entire UI.
+- Redux + Redux Thunk to keep the architecture ready for real APIs.
+- SASS/SCSS with color palettes, mixins, and a custom `ThemeProvider` that exposes `window.setTheme('dark' | 'light')`.
+- Modular sections: `Header`, `Navbar`, hero `Banner`, catalog cards, testimonials, and a utility-rich footer.
+- Mock products and reviews live in `src/API/PublicAPI.js` and `src/constants/strings.js`, so dropping in live data takes minutes.
+- Responsive grid tuned for desktop/tablet and semantic markup for SEO-ready HTML.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Stack & dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React 18, React Router 6
+- Redux, React-Redux, Redux Thunk
+- SASS (`sass@^1.55.0`) and custom mixins (`src/stylesheets`)
+- Swiper 8 (already in package.json for future sliders)
+- Testing Library + Jest (Create React App preset)
 
-### `npm test`
+### Project structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+src/
+├─ components/
+│  ├─ App.js
+│  ├─ HOC/ThemeProvider.js
+│  ├─ reusable/ (product cards, rating, pagination dots)
+│  └─ views/ (header, navbar, banner, mainPage, reviews, footer)
+├─ store/ (actionTypes, reducers, local storage helpers, Redux config)
+├─ constants/ (UI strings, contacts, build settings)
+├─ API/ (mock reviews)
+└─ images/, stylesheets/, index.js, index.css
+```
 
-### `npm run build`
+### Getting started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Runs on `http://localhost:3000`. Everything is static, so no backend is required.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Production build
 
-### `npm run eject`
+```bash
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Outputs to `build/`, ready for any static hosting (GitHub Pages, Netlify, etc.).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Tests
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm test
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Uses the CRA Jest + Testing Library setup. Only a sample spec (`test/App.test.js`) is included, but the tooling is configured.
 
-## Learn More
+### Handy scenarios
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Toggle theme**: run `window.setTheme('dark')` in DevTools.
+- **Swap mock data**: edit `src/API/PublicAPI.js` for reviews and update card data in `src/components/views/mainPage/MainPage.js`.
+- **Add a section**: drop a component into `src/components/views` and import it in `src/components/App.js`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Next steps
 
-### Code Splitting
+- Hook up real assortment/review APIs.
+- Add a global cart/filter store slice.
+- Expand unit/UI coverage for `Header`, `ProductCard`, `Reviews`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Experiment freely—the project is built for it! 💪
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## RU
 
-### Making a Progressive Web App
+Одностраничный макет интернет-магазина спортивного питания. Цель проекта — потренироваться в современной верстке с React и Redux, собрать насыщенную маркетинговую посадочную страницу и подготовить основу для дальнейшего развития в полноценный e-commerce фронт.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Что внутри
 
-### Advanced Configuration
+- UI-слой на React 18 + функциональные компоненты.
+- Управление состоянием через Redux + Redux Thunk (готово для интеграции с бекендом).
+- SASS/SCSS с раздельными палитрами, миксинами и отдельным `ThemeProvider`, который позволяет переключать темы через `window.setTheme('dark' | 'light')`.
+- Модульные блоки: `Header`, `Navbar`, hero-`Banner`, карточки каталога, отзывы, футер с быстрыми ссылками.
+- Моковые данные (товары, отзывы) вынесены в `src/API/PublicAPI.js` и `src/constants/strings.js`, поэтому легко заменить на реальные API.
+- Адаптивная сетка и семантическая верстка, ориентированная на десктоп и планшеты.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Стек и зависимости
 
-### Deployment
+- React 18, React Router 6
+- Redux, React-Redux, Redux Thunk
+- SASS (`sass@^1.55.0`) и собственные миксины (`src/stylesheets`)
+- Swiper 8 (подключен в зависимостях для будущих слайдеров)
+- Testing Library + Jest (CRA пресет)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Структура проекта
 
-### `npm run build` fails to minify
+```
+src/
+├─ components/
+│  ├─ App.js
+│  ├─ HOC/ThemeProvider.js
+│  ├─ reusable/ (карточки продуктов, рейтинг, индикаторы пагинации)
+│  └─ views/ (header, navbar, banner, mainPage, reviews, footer)
+├─ store/ (actionTypes, reducers, локальное хранилище, конфиг Redux)
+├─ constants/ (строки интерфейса, контакты, настройки сборки)
+├─ API/ (моки отзывов)
+└─ images/, stylesheets/, index.js, index.css
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Как запустить
+
+```bash
+npm install
+npm start
+```
+
+Приложение поднимется на `http://localhost:3000`. Все данные статичные, поэтому backend не требуется.
+
+#### Production build
+
+```bash
+npm run build
+```
+
+Сборка попадает в папку `build/` и готова к деплою на любой статический хостинг (GitHub Pages, Netlify и т. п.).
+
+#### Тесты
+
+```bash
+npm test
+```
+
+По умолчанию запускается CRA-пресет Jest + Testing Library. Тестов немного (лежит пример в `test/App.test.js`), но инфраструктура уже настроена.
+
+### Полезные сценарии
+
+- **Сменить тему**: откройте DevTools и выполните `window.setTheme('dark')`.
+- **Заменить мок-данные**: обновите `src/API/PublicAPI.js` (отзывы) и данные карточек в `src/components/views/mainPage/MainPage.js`.
+- **Добавить новые секции**: создайте компонент в `src/components/views` и подключите его в `src/components/App.js`.
+
+### Дальнейшие планы
+
+- Подключить реальные API с ассортиментом и отзывами.
+- Завести глобальный стор для корзины и фильтров каталога.
+- Добавить unit/UI-тесты на ключевые блоки (Header, ProductCard, Reviews).
+
+Проект открыт для любых экспериментов — дерзайте! 💪
