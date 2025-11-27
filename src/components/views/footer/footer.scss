@@ -1,7 +1,7 @@
 @import "../../../stylesheets/colors";
 @import "../../../stylesheets/mixins";
 
-.footer{
+.footer {
   display: flex;
   justify-content: center;
   background: $bg5;
@@ -13,6 +13,10 @@
     max-width: 1180px;
     justify-content: space-between;
 
+    @include media(768px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__links {
@@ -41,16 +45,18 @@
       }
     }
   }
-  &__social{
-    &__container{
+
+  &__social {
+    &__container {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       align-items: flex-end;
     }
   }
-  &__icons{
-    &__container{
+
+  &__icons {
+    &__container {
       display: flex;
       justify-content: space-between;
       width: 258px;

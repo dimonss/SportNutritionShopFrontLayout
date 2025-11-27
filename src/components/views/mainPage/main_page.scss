@@ -1,3 +1,6 @@
+@import "../../../stylesheets/colors";
+@import "../../../stylesheets/mixins";
+
 .main-page {
   display: flex;
   justify-content: center;
@@ -32,6 +35,11 @@
     &__inner {
       display: flex;
       height: 452px;
+
+      @include media(768px) {
+        overflow-x: scroll;
+        width: 100%;
+      }
     }
   }
 }

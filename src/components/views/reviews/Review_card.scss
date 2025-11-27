@@ -5,14 +5,16 @@
   max-width: 380px;
   transition: scale 1s;
 
+  @include media(768px) {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 40px;
+  }
+
   &:hover {
     transition: scale 125ms;
     scale: 1.05;
     cursor: pointer;
-  }
-
-  &__inner {
-
   }
 
   &__top {

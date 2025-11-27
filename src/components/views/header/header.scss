@@ -29,7 +29,10 @@
     @include size(50px);
     border-radius: 50%;
     position: relative;
-    margin-left: 96px;
+
+    @include media(768px) {
+      margin-left: 20px;
+    }
 
     &__indicator {
       @include centered;

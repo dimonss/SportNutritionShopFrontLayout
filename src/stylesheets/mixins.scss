@@ -10,8 +10,14 @@
 }
 
 @mixin hover() {
-  &:hover{
+  &:hover {
     background: $hover;
     cursor: pointer;
+  }
+}
+
+@mixin media($width) {
+  @media screen and (max-width: $width) {
+    @content;
   }
 }

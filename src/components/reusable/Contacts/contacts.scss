@@ -4,14 +4,23 @@
 .contacts {
   &__contact {
     @include centered;
+
     &__phone {
       font-family: Roboto-Mediun, serif;
       color: $bg1;
+
+      @include media(768px) {
+        display: none;
+      }
     }
 
     &__telegram {
       background: $blue;
       margin: 0 20px 0 20px;
+
+      @include media(768px) {
+        margin: 0 10px;
+      }
     }
 
     &__whatsapp {
