@@ -9,18 +9,45 @@
   background: $bg5;
   height: 80px;
 
+  @include tablet {
+    padding: 0 15px;
+    height: 70px;
+  }
+
+  @include mobile {
+    padding: 0 10px;
+    height: 60px;
+  }
+
   &__inner {
     width: 100%;
     max-width: 1180px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__logo {
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     flex-grow: 3;
+
+    @include mobile {
+      flex-grow: 1;
+      
+      svg {
+        width: 120px;
+        height: auto;
+      }
+    }
+
+    @include tablet {
+      svg {
+        width: 140px;
+        height: auto;
+      }
+    }
   }
 
   &__store-basket {
@@ -29,9 +56,16 @@
     @include size(50px);
     border-radius: 50%;
     position: relative;
+    flex-shrink: 0;
 
-    @include media(768px) {
-      margin-left: 20px;
+    @include tablet {
+      @include size(45px);
+      margin-left: 15px;
+    }
+
+    @include mobile {
+      @include size(40px);
+      margin-left: 10px;
     }
 
     &__indicator {
@@ -45,6 +79,12 @@
       font-family: Roboto-Mediun, serif;
       color: white;
       font-size: 12px;
+
+      @include mobile {
+        @include size(18px);
+        font-size: 10px;
+        right: -8px;
+      }
     }
   }
 }

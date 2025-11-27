@@ -4,24 +4,32 @@
 .product-card {
   background: $bg1;
   padding: 20px;
-  width: 280px;
-  height: 375px;
+  min-width: 200px;
+  height: 360px;
   position: relative;
   overflow: hidden;
   transition: height 1250ms;
+  scroll-snap-align: start;
+  box-sizing: border-box;
 
-  @include media(768px) {
-    min-width: 280px;
+  @include tablet {
+    min-width: 200px;
+    height: 396px;
   }
 
-  &:hover {
-    cursor: pointer;
-    transition: height 250ms;
-    height: 446px;
+  @include mobile {
+    height: auto;
+    min-height: 340px;
+    padding: 12px;
+    overflow: visible;
   }
 
-  &:not(:last-child) {
-    margin-right: 20px;
+  @include desktop {
+    &:hover {
+      cursor: pointer;
+      transition: height 250ms;
+      height: 446px;
+    }
   }
 
   &__inner {
@@ -29,8 +37,35 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 390px;
-    margin-bottom: 26px;
+    height: 330px;
+    margin-bottom: 20px;
+
+    @include tablet {
+      height: 310px;
+      margin-bottom: 18px;
+    }
+
+    @include mobile {
+      height: auto;
+      min-height: 250px;
+      margin-bottom: 15px;
+      flex: 1;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
   }
 
   &__title,
@@ -41,6 +76,14 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 120%;
+
+    @include tablet {
+      font-size: 14px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 
   &__description {
@@ -48,6 +91,15 @@
     font-size: 14px;
     line-height: 150%;
     width: 100%;
+
+    @include tablet {
+      font-size: 12px;
+    }
+
+    @include mobile {
+      font-size: 11px;
+      line-height: 140%;
+    }
   }
 
   &__price {
@@ -56,9 +108,26 @@
     font-size: 20px;
     margin: 0 auto;
 
+    @include tablet {
+      font-size: 18px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+
     &__old {
       text-decoration: line-through;
       color: $bg3;
+      font-size: 16px;
+
+      @include tablet {
+        font-size: 14px;
+      }
+
+      @include mobile {
+        font-size: 12px;
+      }
     }
   }
 
@@ -71,11 +140,32 @@
     border-radius: 4px;
     color: $bg1;
     @include hover;
+    font-size: 14px;
+
+    @include tablet {
+      width: 120px;
+      height: 30px;
+      font-size: 12px;
+    }
+
+    @include mobile {
+      width: 100%;
+      max-width: 180px;
+      height: 32px;
+      font-size: 12px;
+      position: relative;
+      bottom: auto;
+    }
 
     &__container {
       width: 100%;
       display: flex;
       justify-content: center;
+
+      @include mobile {
+        margin-top: 10px;
+        position: relative;
+      }
     }
   }
 }

@@ -12,10 +12,18 @@
     width: 100%;
     max-width: 1180px;
     justify-content: space-between;
+    box-sizing: border-box;
 
-    @include media(768px) {
+    @include tablet {
       flex-direction: column;
       align-items: center;
+      padding: 30px 20px;
+      gap: 30px;
+    }
+
+    @include mobile {
+      padding: 25px 15px;
+      gap: 25px;
     }
   }
 
@@ -23,6 +31,11 @@
     &__container {
       display: flex;
       flex-direction: column;
+
+      @include tablet {
+        align-items: center;
+        text-align: center;
+      }
     }
 
     &__title {
@@ -33,6 +46,15 @@
       line-height: 120%;
       margin-bottom: 24px;
 
+      @include tablet {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      @include mobile {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
     }
 
     &__item {
@@ -40,8 +62,20 @@
       font-size: 16px;
       line-height: 150%;
 
+      @include tablet {
+        font-size: 14px;
+      }
+
+      @include mobile {
+        font-size: 12px;
+      }
+
       &:not(:last-child) {
         margin-bottom: 12px;
+
+        @include mobile {
+          margin-bottom: 10px;
+        }
       }
     }
   }
@@ -52,6 +86,11 @@
       flex-direction: column;
       justify-content: flex-end;
       align-items: flex-end;
+
+      @include tablet {
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 
@@ -61,6 +100,22 @@
       justify-content: space-between;
       width: 258px;
       margin-top: 44px;
+
+      @include tablet {
+        width: 220px;
+        margin-top: 30px;
+      }
+
+      @include mobile {
+        width: 200px;
+        margin-top: 20px;
+        gap: 15px;
+
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+      }
     }
   }
 }
